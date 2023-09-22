@@ -100,7 +100,9 @@ function Header({ unreadNotifcations, onSetRead }) {
       <h3>Notifications </h3>
       <div className="unread">{unreadNotifcations}</div>
       <div className="link" onClick={onSetRead}>
-        <a href="#">Mark all as read</a>
+        <a href="#" aria-label="link to mark the notifications as read">
+          Mark all as read
+        </a>
       </div>
     </header>
   );
@@ -128,6 +130,7 @@ function Friend({ friend, setRead }) {
           <span>{friend.notification}</span>
           <a
             href="#"
+            aria-label="link to content in the comments"
             className={
               friend.linkedContent === "Chess Club"
                 ? "friend_comment-linked friend_comment-linked--chess"
@@ -161,10 +164,15 @@ function Attribution() {
         href="https://www.frontendmentor.io?ref=challenge"
         rel="noreferrer"
         target="_blank"
+        aria-label="link to front end mentor"
       >
         Frontend Mentor
       </a>
-      . Coded by <a href="#">Cornelia</a>.
+      . Coded by{" "}
+      <a href="#" aria-label="coded by link">
+        Cornelia
+      </a>
+      .
     </div>
   );
 }
