@@ -62,7 +62,7 @@ const notifications = [
     id: 7,
     name: "Anna Kim",
     image: "./images/avatar-anna-kim.webp",
-    notification: "left the group",
+    notification: "Anna Kim left the group",
     linkedContent: "Chess Club",
     read: true,
     status: "2 weeks ago",
@@ -119,11 +119,9 @@ function FriendsList({ friends, notifications, setRead }) {
 function Friend({ friend, setRead }) {
   return (
     <li className={!friend.read ? "friend active" : "friend"}>
-      <div className="friend_img">
-        <img alt={friend.name} src={friend.image} loading="lazy"></img>
-      </div>
+      <img alt={friend.name} src={friend.image}></img>
       <div className="friend_notification">
-        <div className="friend_comment">
+        <p className="friend_comment">
           <strong className="friend_name">{friend.name}</strong>{" "}
           <span>{friend.notification}</span>
           <a
@@ -138,16 +136,16 @@ function Friend({ friend, setRead }) {
             {friend.linkedContent}
           </a>
           {!friend.read && <span className="active--dot"></span>}
-        </div>
-        <p className="friend_comment--status">{friend.status}</p>
-        {friend.privatMessage && (
-          <p className="privat_message">{friend.privatMessage}</p>
-        )}
+        </p>
       </div>
       {friend.pictureComment && (
         <div className="friend_comment--img">
           <img src={friend.pictureComment} alt={friend.pictureComment}></img>
         </div>
+      )}
+      <p className="friend_comment--status">{friend.status}</p>
+      {friend.privatMessage && (
+        <p className="privat_message">{friend.privatMessage}</p>
       )}
     </li>
   );
