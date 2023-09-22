@@ -34,7 +34,7 @@
 
   .app {
     width: 62vw;
-    margin-top: 10rem;
+    margin-top: 15rem;
     padding: 6rem 4rem;
     border-radius: 10px;
     background-color: var(--color-white);
@@ -96,7 +96,7 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    padding: 2rem;
+    padding: 3rem 2rem;
     border-radius: 10px;
   }
 
